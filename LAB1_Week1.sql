@@ -7,7 +7,7 @@ WHERE ID=23;
 --2. Display the first name, last name, and department number of the
 --employees in departments 10 and 50 in alphabetical order of last name.
 --Merge the first name and last name together, and title the column
---Employees. (Use ë||í to merge columns).
+--Employees. (Use ‚Äò||‚Äô to merge columns).
 SELECT FIRST_NAME || ' ' || LAST_NAME Employees, DEPT_ID
 FROM S_EMP
 WHERE DEPT_ID IN(10,50)
@@ -18,7 +18,7 @@ Audry Ropeburn	50
 Carmen Velasquez	50
 */
 
---3.Display all employees whose last names contain an ìsî
+--3.Display all employees whose last names contain an ‚Äús‚Äù
 SELECT *
 FROM S_EMP
 WHERE LOWER(LAST_NAME) LIKE '%s%';
@@ -164,7 +164,7 @@ Dancs (Stock Clerk)
 Schwartz (Stock Clerk)
 */
 
---10.Display the product name for products that have ìskiî in the name
+--10.Display the product name for products that have ‚Äúski‚Äù in the name
 SELECT NAME
 FROM S_PRODUCT
 WHERE LOWER(NAME) LIKE '%ski%';
@@ -284,7 +284,7 @@ FROM S_CUSTOMER C LEFT JOIN S_ORD o ON c.id=o.CUSTOMER_ID
 */
 
 --16.Display all employees by last name and employee number along with
---their managerís last name and manager number
+--their manager‚Äôs last name and manager number
 SELECT nv.id IDEmp, nv.last_name nameEmp, ql.id manId, ql.last_name manName
 FROM S_EMP nv JOIN S_EMP ql ON nv.manager_id = ql.id;
 /*
@@ -434,7 +434,7 @@ WHERE SALARY>(SELECT AVG(SALARY)
 
 --24.Display the employee number, first name, and last name for all
 --employees with a salary above the average salary and that work with
---any employee with a last name that contains a ìtî.
+--any employee with a last name that contains a ‚Äút‚Äù.
 
 SELECT  ID, FIRST_NAME, LAST_NAME, USERID
 FROM S_EMP
